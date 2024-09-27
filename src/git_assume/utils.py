@@ -6,9 +6,9 @@ import yaml
 
 
 def ask(question: str, include_guide: bool = True) -> bool | None:
-    dic = {"y": True, "yes": True, "n": False, "no": False}
+    dic = {"": True, "y": True, "yes": True, "n": False, "no": False}
     if include_guide:
-        question += " [Y]es/[N]o >> "
+        question += " [Y/n] "
     ans = input(question).lower()
     return dic.get(ans, None)
 
@@ -23,7 +23,7 @@ def get_legacy_logger(level: str) -> logging.Logger:
     return logger
 
 
-def setup_logger(logger_configfile_path: str, level: str):
+def setup_logger(logger_configfile_path: str):
     with open(logger_configfile_path, "r") as f:
         config = yaml.safe_load(f.read())
         logging.config.dictConfig(config)

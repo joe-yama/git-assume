@@ -1,5 +1,6 @@
 import argparse
 import configparser
+import logging
 import os
 import sys
 from logging import Logger, getLogger
@@ -13,8 +14,9 @@ DEFAULT_NETRC_SHORTTERM_PATH = f"{os.path.expanduser("~")}/.netrc"
 DEFAULT_NETRC_LONGTERM_PATH = f"{os.path.expanduser("~")}/.netrc-longterm"
 
 def main(argv: Optional[List]=None):
-    parser = argparse.ArgumentParser()
+    utils.setup_logger(LOGGER_CONFIG_PATH)
 
+    parser = argparse.ArgumentParser()
     subparsers = parser.add_subparsers()
     
     parser_assume = subparsers.add_parser("assume", help="see `assume -h`")
@@ -38,7 +40,7 @@ def main(argv: Optional[List]=None):
         help="Set log level",
         choices=["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG", "NOTSET"],
         required=False,
-        default="DEBUG",
+        default="INFO",
     )
     parser_assume.add_argument(
         "-y", "--yes",
@@ -58,7 +60,7 @@ def main(argv: Optional[List]=None):
         help="Set log level",
         choices=["CRITICAL", "ERROR", "WARNING", "INFO", "DEBUG", "NOTSET"],
         required=False,
-        default="DEBUG",
+        default="INFO",
     )
     parser_assume.set_defaults(handler=gitassume_list)
 
@@ -73,8 +75,8 @@ def main(argv: Optional[List]=None):
         parser.print_help()
 
 def gitassume_assume(args: argparse.ArgumentParser):
-    utils.setup_logger(LOGGER_CONFIG_PATH, args.log_level)
     logger = getLogger(__name__)
+    logger.setLevel(getattr(logging, args.log_level))
 
     validate_assume_args(args, logger)
 
@@ -100,8 +102,8 @@ def gitassume_assume(args: argparse.ArgumentParser):
     write_netrc(netrc_longterm_config[args.profile], args.netrc, logger)
 
 def gitassume_list(args: argparse.ArgumentParser):
-    utils.setup_logger(LOGGER_CONFIG_PATH, args.log_level)
     logger = getLogger(__name__)
+    logger.setLevel(getattr(logging, args.log_level))
 
     validate_list_args(args, logger)
 
@@ -148,6 +150,7 @@ def write_netrc(netrc: Dict[str,str], filename: str, logger: Logger):
     with open(filename, "w") as f:
         for key, value in netrc.items():
             f.write(f"{key} {value}\n")
+            logger.debug(f"Successfully write: {key} = {value}")
     logger.info(f"Successfully write to .netrc: {filename}")
 
 
