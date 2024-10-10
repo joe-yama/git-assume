@@ -111,4 +111,5 @@ Already up to date.
 Contributions are welcome! Please open an issue or submit a pull request.
 
 ## License
-[MIT](./LICENSE.txt)
+
+[The MIT License](./LICENSE.txt).
