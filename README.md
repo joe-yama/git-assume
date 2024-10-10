@@ -1,6 +1,6 @@
 # git-assume: A CLI Tool to Switch Your .netrc Configuration
 
-[![pytest](https://github.com/joe-yama/git-assume/actions/workflows/pytest.yml/badge.svg)](https://github.com/joe-yama/git-assume/actions/workflows/pytest.yml)
+![PyPI - Version](https://img.shields.io/pypi/v/git-assume) ![Python Version from PEP 621 TOML](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2Fjoe-yama%2Fgit-assume%2Fmain%2Fpyproject.toml) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/joe-yama/git-assume/pytest.yml?branch=main&label=pytest) ![Codecov](https://img.shields.io/codecov/c/github/joe-yama/git-assume)
 
 `git-assume` helps you manage multiple `.netrc` configurations with ease.
 
