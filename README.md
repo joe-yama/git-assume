@@ -12,9 +12,7 @@
 ## Installation
 
 ```sh
-git clone https://github.com/tmc-coco/git-assume.git
-cd git-assume
-pip install .
+pip install git-assume
 ```
 
 ## Prerequisites
