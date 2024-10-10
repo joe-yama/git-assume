@@ -10,14 +10,12 @@
 #   universal: false
 
 -e file:.
-black==24.8.0
-    # via git-assume
+black==24.10.0
 click==8.1.7
     # via black
 iniconfig==2.0.0
     # via pytest
 isort==5.13.2
-    # via git-assume
 mypy-extensions==1.0.0
     # via black
 packaging==24.1
@@ -30,6 +28,5 @@ platformdirs==4.3.2
 pluggy==1.5.0
     # via pytest
 pytest==8.3.3
-    # via git-assume
 pyyaml==6.0.2
     # via git-assume
