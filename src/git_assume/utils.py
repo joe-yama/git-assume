@@ -8,7 +8,7 @@ from typing import Dict, Optional
 import yaml
 
 
-def ask(question: str, include_guide: bool = True) -> bool | None:
+def ask(question: str, include_guide: bool = True) -> Optional[bool]:
     dic = {"": True, "y": True, "yes": True, "n": False, "no": False}
     if include_guide:
         question += " [Y/n] "
