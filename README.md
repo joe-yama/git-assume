@@ -1,5 +1,7 @@
 # git-assume: A CLI Tool to Switch Your .netrc Configuration
 
+[![pytest](https://github.com/joe-yama/git-assume/actions/workflows/pytest.yml/badge.svg)](https://github.com/joe-yama/git-assume/actions/workflows/pytest.yml)
+
 `git-assume` helps you manage multiple `.netrc` configurations with ease.
 
 ## Features
