@@ -30,7 +30,7 @@ login = someone-foo
 password = ghp_xxxxxxxxxx
 
 [sub]
-machine = github.tmc-stargate.com
+machine = github.com
 login = someone-hoge
 password = ghp_yyyyyyyyyy
 ```
@@ -109,3 +109,6 @@ Already up to date.
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+[MIT](./LICENSE.txt)
