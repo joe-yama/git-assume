@@ -1,14 +1,11 @@
 [project]
 name = "git-assume"
-version = "1.0.0"
+version = "1.0.1"
 description = "Add your description here"
 authors = [
     { name = "Josuke YAMANE", email = "s1r0mqme@gmail.com" }
 ]
 dependencies = [
-    "pytest>=8.3.3",
-    "black>=24.8.0",
-    "isort>=5.13.2",
     "pyyaml>=6.0.2",
 ]
 readme = "README.md"
@@ -23,7 +20,11 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "pytest>=8.3.3",
+    "black>=24.10.0",
+    "isort>=5.13.2",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
