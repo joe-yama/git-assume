@@ -1,6 +1,6 @@
 [project]
 name = "git-assume"
-version = "1.0.1"
+version = "1.0.3"
 description = "Add your description here"
 authors = [
     { name = "Josuke YAMANE", email = "s1r0mqme@gmail.com" }
