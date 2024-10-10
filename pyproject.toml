@@ -3,7 +3,7 @@ name = "git-assume"
 version = "1.0.1"
 description = "Add your description here"
 authors = [
-    { name = "Josuke Yamane", email = "josuke_yamane@mail.toyota.co.jp" }
+    { name = "Josuke YAMANE", email = "s1r0mqme@gmail.com" }
 ]
 dependencies = [
     "pytest>=8.3.3",
